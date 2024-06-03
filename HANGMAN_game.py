@@ -1,62 +1,8 @@
 import random
-#import hangman_stages
-stages= ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========''',
- '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========''',
- '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''','''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========''', 
- '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========''','''
-+---+
-  |   |
-      |
-      |
-      |
-      |
-=========''']
+import hangman_StagesAndList
 print("Let's play Hangman game!")
 lives=6
-word=['apple','beautiful','potato','ugly','good','love','anusha','venkat','bobby','chandu','lokesh','vasu','priya','nandu','suharika','satya','hema','sai','devi']
-chosen_word=random.choice(word)
+chosen_word=random.choice(hangman_StagesAndList.word)
 display=[]
 for i in chosen_word:
     display.append("_")
@@ -74,8 +20,7 @@ while not game_over:
         if lives==0:
             game_over=True
             print("You loose!")
-    #print(hangman_stages.stages[lives])
-    print(stages[lives])
+    print(hangman_StagesAndList.stages[lives])
     if '_' not in display:
         game_over=True
         print("You win!")
